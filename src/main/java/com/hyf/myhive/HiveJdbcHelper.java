@@ -23,33 +23,33 @@ public class HiveJdbcHelper {
 		try {
 			conn = getConn();
 			System.out.println(conn);
-			stmt = conn.createStatement();
-
-//			String filepath = "/Users/huangyongfeng/Documents/mgdat.paymentjournal.sql";
-			String filepath = "/usr/local/mgbase_calendar.sql";
-			
-			String tableName = "mgbase_calendar";
-			// 第一步:存在就先删除
-			dropTable(stmt,tableName);
-			 
-			// 第二步:不存在就创建
-			sql = TablesSql.mgbase_calendar;
-			createTable(stmt, tableName,sql);
-
-			// 第三步:查看创建的表
-			showTables(stmt, tableName);
-
-			// 执行describe table操作
-			describeTables(stmt, tableName);
-
-			// 执行load data into table操作
-			loadData(stmt, tableName,filepath);
-
-			// 执行 select * query 操作
-//			selectData(stmt, tableName);
-
-			// 执行 regular hive query 统计操作
-			countData(stmt, tableName);
+//			stmt = conn.createStatement();
+//
+////			String filepath = "/Users/huangyongfeng/Documents/mgdat.paymentjournal.sql";
+//			String filepath = "/usr/local/mgbase_calendar.sql";
+//			
+//			String tableName = "mgbase_calendar";
+//			// 第一步:存在就先删除
+//			dropTable(stmt,tableName);
+//			 
+//			// 第二步:不存在就创建
+//			sql = TablesSql.mgbase_calendar;
+//			createTable(stmt, tableName,sql);
+//
+//			// 第三步:查看创建的表
+//			showTables(stmt, tableName);
+//
+//			// 执行describe table操作
+//			describeTables(stmt, tableName);
+//
+//			// 执行load data into table操作
+//			loadData(stmt, tableName,filepath);
+//
+//			// 执行 select * query 操作
+////			selectData(stmt, tableName);
+//
+//			// 执行 regular hive query 统计操作
+//			countData(stmt, tableName);
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
